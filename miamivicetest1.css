@@ -1,0 +1,430 @@
+html {
+  width: 100%;
+}
+
+body {
+  background: linear-gradient(#4e2799, #5939d8);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 650px;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+
+.title {
+  text-align: center;
+  font-family: "Righteous", san-serif;
+  color: #FF66FF;
+  font-size: 88px;
+  -webkit-text-stroke: 3px #85E0FF;
+  letter-spacing: 2.5px;
+  -webkit-transform: rotate(-12deg);
+  transform: rotate(-12deg);
+  text-shadow: 4px 4px yellow;
+  margin: 0 auto;
+  text-indent: -10%;
+}
+
+.subtitle {
+  font-family: "Pacifico", cursive;
+  z-index: 2;
+  color: yellow;
+  text-shadow: 4px 4px rgba(255, 102, 255, 0.7);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -30px;
+  margin-left: 50px;
+}
+
+.mobileError{
+  text-align: center;
+  color: yellow;
+  width: 90%;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.hideMobile {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+
+  body {
+    height: auto;
+    width: auto;
+  }
+
+  .playArea {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    border: 7px solid yellow;
+    background: #FF66FF;
+    align-self: center;
+    border-radius: 3px;
+  }
+
+  .gameInterface {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .buttonHolder {
+    margin-top: 10px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  button {
+    background: #85E0FF;
+    border: 4px solid #4e2799;
+    border-radius: 7px;
+    height: 36px;
+    font-family: "Righteous", san-serif;
+    font-size: 16px;
+  }
+
+  .medInstructions {
+    font-size: 20px;
+    font-family: "Pacifico", cursive;
+    color: yellow;
+    text-align: center;
+  }
+
+  .codeBoxLabels {
+    display: flex;
+    width: 100%;
+    font-family: "Pacifico", cursive;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 30px;
+    color: #4e2799;
+    margin: 0;
+  }
+
+  .codeBoxLabels p {
+    margin: 0;
+  }
+
+  .codeBoxes {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .htmlCodeBox {
+    background-color: #fff;
+    border: 6px solid #4e2799;
+    width: 47%;
+    border-radius: 7px;
+    height: 300px;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cssCodeBox {
+    background-color: #fff;
+    border: 6px solid #4e2799;
+    width: 48.1%;
+    border-radius: 7px;
+    height: 312px;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 25px;
+  }
+
+  .bucket {
+    background: #4e2799;
+    border: 4px solid #85E0FF;
+    width: 65px;
+    margin: 10px;
+    height: 28px;
+    border-radius: 7px;
+  }
+
+  .cssPair {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .statusDisplayLabels {
+    display: flex;
+    width: 100%;
+    font-family: "Pacifico", cursive;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 30px;
+    color: #4e2799;
+    margin: 0;
+  }
+
+  .statusDisplayLabels p {
+    margin: 0;
+  }
+
+  .statusDisplayBoxes {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+
+  .currentStatus {
+    background-color: #fff;
+    border: 6px solid #4e2799;
+    width: 47%;
+    border-radius: 7px;
+    height: 300px;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .targetStatus {
+    background-color: #fff;
+    border: 6px solid #4e2799;
+    width: 47%;
+    border-radius: 7px;
+    height: 300px;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: purple;
+  }
+
+  .tutorialArea {
+    display: none;
+  }
+
+  .mobileError {
+    display: none;
+  }
+
+  .hideMed {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .titleBox {
+    height: 156px;
+  }
+
+  .playArea {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .buttonsAndInstructions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 14%;
+    margin-left: 9px;
+  }
+
+  .largeInstructions {
+    display: block;
+    padding-left: 8px;
+    color: yellow;
+    font-family: "Pacifico", cursive;
+  }
+
+  .gameInterface {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .buttonHolder {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  button {
+    background: #85E0FF;
+    border: 4px solid #4e2799;
+    border-radius: 7px;
+    height: 36px;
+    font-family: "Righteous", san-serif;
+    font-size: 20px;
+  }
+
+  .largeLabel {
+    display: flex;
+    transform: rotate(270deg);
+    color: #4e2799;;
+    font-size: 40px;
+    height: 70px;
+    margin-top: 55px;
+    width: 43px;
+    font-family: "Pacifico", cursive;
+  }
+
+  .codeBoxLabels {
+    display: flex;
+    width: 100%;
+    font-family: "Pacifico", cursive;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 30px;
+    color: #4e2799;
+    margin: 0;
+  }
+
+  .codeBoxLabels p {
+    margin: 0;
+  }
+
+  .codeBoxes {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    margin-right: 12px;
+    margin-top: 8px;
+  }
+
+  .htmlCodeBox {
+    background-color: #fff;
+    border: 6px solid #4e2799;
+    width: 47%;
+    border-radius: 7px;
+    height: 270px;
+    font-size: 24px;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cssCodeBox {
+    background-color: #fff;
+    border: 6px solid #4e2799;
+    width: 48.1%;
+    border-radius: 7px;
+    height: 282px;
+    font-size: 24px;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 25px;
+  }
+
+  .bucket {
+    background: #4e2799;
+    border: 4px solid #85E0FF;
+    width: 80px;
+    margin: 10px;
+    height: 31px;
+    border-radius: 7px;
+  }
+
+  .cssPair {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .largeStatusLabel {
+    display: flex;
+    transform: rotate(270deg);
+    color: #4e2799;
+    font-size: 38px;
+    height: 70px;
+    margin-top: 215px;
+    width: 43px;
+    font-family: "Pacifico", cursive;
+  }
+
+  .statusDisplayLabels {
+    display: flex;
+    width: 100%;
+    font-family: "Pacifico", cursive;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 30px;
+    color: #4e2799;
+    margin: 0;
+  }
+
+  .statusDisplayLabels p {
+    margin: 0;
+  }
+
+  .statusDisplayBoxes {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 8px;
+    margin-right: 12px;
+  }
+
+  .currentStatus {
+    background-color: #fff;
+    border: 6px solid #4e2799;
+    width: 47%;
+    border-radius: 7px;
+    height: 270px;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .targetStatus {
+    background-color: #fff;
+    border: 6px solid #4e2799;
+    width: 47%;
+    border-radius: 7px;
+    height: 270px;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: purple;
+  }
+
+  .tutorialArea {
+    display: none;
+  }
+
+  .mobileError {
+    display: none;
+  }
+
+  .hideLarge {
+    display: none;
+  }
+}

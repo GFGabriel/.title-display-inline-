@@ -1,0 +1,271 @@
+body {
+  background-color: #FFFFFA;
+  color: #fdd3a7;
+  font-family: 'Oswald', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.titleBox {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 20px;
+  color: #FF5EA9;
+  text-align: center;
+}
+
+.hideMobile {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+
+  h1 {
+    letter-spacing: .5em;
+    font-size: 30px;
+  }
+
+  .playArea {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    border: 15px double #FFEBD6;
+  }
+
+  .gameInterface {
+    width: 100%;
+  }
+
+  .buttonHolder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px;
+  }
+
+  button {
+    border: 5px solid #FF5EA9;
+    color: #FF5EA9;
+    font-family: 'Oswald', sans-serif;
+    background-color: #FFFFFA;
+    width: 60px;
+    font-size: 12px;
+  }
+
+  .medInstructions {
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .codeBoxLabels {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #FF5EA9;
+    font-size: 30px;
+  }
+
+  .codeBoxLabels p {
+    margin: 0;
+  }
+
+  .codeBoxes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .htmlCodeBox {
+    border: 5px solid #FFEBD6;
+    width: 48.7%;
+    color: #051014;
+    font-size: 18px;
+    height: 315px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cssCodeBox {
+    border: 5px solid #FFEBD6;
+    width: 48.7%;
+    color: #051014;
+    font-size: 18px;
+    height: 325px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 15px;
+  }
+
+  .bucket {
+    border: 5px solid #FFEBD6;
+    background: #FF5EA9;
+    width: 60px;
+    margin: 0 8px;
+    height: 22px;
+  }
+
+  .cssPair {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .statusDisplayBoxes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .statusDisplayLabels {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #FF5EA9;
+    font-size: 30px;
+  }
+
+  .statusDisplayLabels p{
+    margin: 0;
+  }
+
+  .currentStatus {
+    border: 5px solid #FFEBD6;
+    width: 48.2%;
+    color: #051014;
+    font-size: 18px;
+    height: 315px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  .targetStatus {
+    border: 5px solid #FFEBD6;
+    width: 48.2%;
+    color: purple;
+    font-size: 18px;
+    height: 315px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  .tutorialArea {
+    display: none;
+  }
+
+  .mobileError {
+    display: none;
+  }
+
+  .hideMed {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+
+  h1 {
+    font-size: 50px;
+    margin: 0;
+  }
+
+  .playArea {
+    width: 98%;
+    flex-direction: row;
+  }
+
+  .buttonsAndInstructions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 12%;
+  }
+
+  .largeInstructions {
+    display: block;
+    padding-left: 8px;
+  }
+
+  .buttonHolder {
+    flex-direction: column;
+    height: 500px;
+  }
+
+  button {
+    width: 90px;
+    font-size: 18px;
+  }
+
+  .largeLabel {
+    display: flex;
+    transform: rotate(270deg);
+    color: #ff5ea9;
+    font-size: 40px;
+    height: 70px;
+    margin-top: 35px;
+    width: 43px;
+  }
+
+  .largeStatusLabel {
+    display: flex;
+    transform: rotate(270deg);
+    color: #ff5ea9;
+    font-size: 38px;
+    height: 70px;
+    margin-top: 165px;
+    width: 43px;
+  }
+
+  .codeBoxes{
+    margin-top: 5px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+  }
+
+  .htmlCodeBox {
+    width: 45%;
+    font-size: 24px;
+    height: 315px;
+  }
+
+  .cssCodeBox {
+    width: 45%;
+    font-size: 24px;
+  }
+
+  .bucket {
+    width: 90px;
+    height: 31px;
+  }
+
+  .statusDisplayBoxes{
+    margin-right: 3px;
+  }
+
+  .currentStatus {
+    width: 45%;
+    font-size: 24px;
+  }
+
+  .targetStatus {
+    width: 44.1%;
+    font-size: 24px;
+  }
+
+  .hideLarge {
+    display: none;
+  }
+}

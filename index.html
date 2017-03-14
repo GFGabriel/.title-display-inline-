@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Game</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="miamivice.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Oswald:400,700|Pacifico|Righteous|Roboto:400,700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div id="congrats" title="Congratulations">
+      Good Job! You completed the first level!
+    </div>
+    <div class="titleBox">
+      <h1 class="title">.title</h1><!--
+      --><h1 class="subtitle">{display:inline}</h1>
+    </div>
+    <div class="mobileError">Sorry! .title {display: inline} is not available for mobile. The UI is simply too complex. Please return on a tablet or desktop/laptop.
+    </div>
+    <div class="playArea hideMobile">
+      <div class="buttonsAndInstructions">
+        <aside class="tutorialArea">
+          <p>Drag selections from the top into the .html and .css boxes to see changes. The goal is to get the .currentStatus box to match the .targetStatus box.</p>
+          <ul>
+            <li>&lt;strong&gt; is an html tag used to give text strong importance, and is typically displayed in bold.</li>
+            <li>color is a property that sets the foreground color of an element's text content, and its decorations.</li>
+          </ul>
+        </aside>
+        <div class="buttonHolder">
+          <div id="htmlTags">
+            <div class="html tag drag button">&lt;strong&gt;</div>
+            <div class="html endTag drag button">&lt;/strong&gt;</div>
+            <div class="css keyword drag button">color:</div>
+            <div class="css value drag button">purple</div>
+          </div>
+        </div>
+        <div class="medInstructions hideLarge"> DRAG TO BOXES BELOW
+        </div>
+        <div class="largeInstructions hideMed"> DRAG TO BOXES ON THE RIGHT
+        </div>
+      </div>
+      <div class="gameInterface">
+        <div class="codeBoxLabels hideLarge">
+          <p>.html</p>
+          <p>.css</p>
+        </div>
+        <div class="codeBoxes">
+          <div class="largeLabel hideMed">
+            .html
+          </div>
+          <div class="htmlCodeBox">
+          </div>
+          <div class="largeLabel hideMed">
+            .css
+          </div>
+          <div class="cssCodeBox">
+
+          </div>
+        </div>
+        <div class="statusDisplayLabels hideLarge">
+          <p>.currentStatus</p>
+          <p>.targetStatus</p>
+        </div>
+        <div class="statusDisplayBoxes">
+          <div class="largeStatusLabel hideMed">
+            .currentStatus
+          </div>
+          <div id="currentStatus" >
+          </div>
+          <div class="largeStatusLabel hideMed">
+            .targetStatus
+          </div>
+          <div id="targetStatus">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="levels.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>

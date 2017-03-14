@@ -1,0 +1,354 @@
+body {
+  background: #181D1E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Abril Fatface', cursive;
+}
+
+.titleBox {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+h1 {
+  color: #BF9E26;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 20px;
+  justify-content: center;
+  display: flex;
+  letter-spacing: .08em;
+  text-shadow: 0 1px 1px #ffe567;
+}
+
+.mobileError {
+  color: #BF9E26;
+}
+
+.hideMobile {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+
+  h1 {
+    font-size: 60px;
+  }
+
+  .playArea {
+    display: flex;
+    flex-direction: column;
+    background: #555;
+    width: 100%;
+    border-radius: 5px;
+    border-right: 1px solid #444343;
+    border-bottom: 1px solid #444343;
+    border-left: 1px solid #5d5a5a;
+    border-top: 1px solid #5d5a5a;
+    box-shadow: 0px 0px 15px rgba(33,62,83,0.7) inset;
+    -moz-box-shadow: 0px 0px 15px rgba(33,62,83,0.7) inset;
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7) inset;
+    box-shadow: 0px 5px 25px rgba(33,62,83,0.9);
+    -moz-box-shadow: 0px 5px 25px rgba(33,62,83,0.9);
+    -webkit-box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.9);
+    justify-content: center;
+  }
+
+  .gameInterface {
+    background: #555;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    align-self: center;
+  }
+
+  .buttonsAndInstructions {
+    justify-content: center;
+  }
+
+  .buttonHolder {
+    background: #cecdcb;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 97%;
+    height: 66px;
+    border-radius: 5px;
+    align-items: center;
+    border-right: 1px solid #5d5a5a;
+    border-bottom: 1px solid #5d5a5a;
+    border-left: 1px solid #444343;
+    border-top: 1px solid #444343;
+    box-shadow: 0px 0px 15px rgba(33,62,83,0.7) inset;
+    -moz-box-shadow: 0px 0px 15px rgba(33,62,83,0.7) inset;
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7) inset;
+    margin-left: 10px;
+  }
+
+  button {
+    background: #BF9E26;
+    font-family: 'Abril Fatface', cursive;
+    height: 30px;
+    border-radius: 10px;
+    width: 80px;
+    font-size: 12px;
+    border-right: 1px solid #8e7a31;
+    border-bottom: 1px solid #8e7a31;
+    border-left: 1px solid #e0c22d;
+    border-top: 1px solid #e0c22d;
+    box-shadow: 0px 0px 15px rgba(247, 220, 88, 0.8) inset;
+    -moz-box-shadow: 0px 0px 15px rgba(247, 220, 88, 0.8) inset;
+    -webkit-box-shadow: 0px 0px 15px rgba(247, 220, 88, 0.8) inset;
+  }
+
+  .medInstructions {
+    display: none;
+  }
+
+
+  .codeBoxLabels {
+    display: flex;
+    justify-content: space-around;
+    color: #BF9E26;
+    font-family: 'Abril Fatface', cursive;
+    width: 90%;
+  }
+
+  .codeBoxLabels p {
+    margin: 0px;
+    font-size: 30px;
+  }
+
+  .codeBoxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .htmlCodeBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: #cecdcb;
+    width: 47%;
+    height: 252px;
+    border-radius: 5px;
+    border-right: 1px solid #5d5a5a;
+    border-bottom: 1px solid #5d5a5a;
+    border-left: 1px solid #444343;
+    border-top: 1px solid #444343;
+    box-shadow: 0px 0px 15px rgba(33,62,83,0.7) inset;
+    -moz-box-shadow: 0px 0px 15px rgba(33,62,83,0.7) inset;
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7) inset;
+  }
+
+
+  .cssCodeBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;;
+    background: #cecdcb;
+    width: 47%;
+    height: 252px;
+    border-radius: 5px;
+    border-right: 1px solid #5d5a5a;
+    border-bottom: 1px solid #5d5a5a;
+    border-left: 1px solid #444343;
+    border-top: 1px solid #444343;
+    box-shadow: 0px 0px 15px rgba(33,62,83,0.7) inset;
+    -moz-box-shadow: 0px 0px 15px rgba(33,62,83,0.7) inset;
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7) inset;
+  }
+
+  .cssCodeBox p {
+    margin-left: 20px;
+  }
+
+  .cssCodeBox div {
+    margin-left: 20px;
+  }
+
+  .statusDisplayLabels {
+    display: flex;
+    justify-content: space-around;
+    color: #BF9E26;
+    font-family: 'Abril Fatface', cursive;
+    width: 90%;
+  }
+
+  .statusDisplayLabels p {
+    margin: 0px;
+    font-size: 30px;
+  }
+
+  .statusDisplayBoxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
+  }
+
+  .currentStatus {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #cecdcb;
+    width: 47%;
+    height: 252px;
+    border-radius: 5px;
+    border-right: 1px solid #5d5a5a;
+    border-bottom: 1px solid #5d5a5a;
+    border-left: 1px solid #444343;
+    border-top: 1px solid #444343;
+    box-shadow: 0px 0px 15px rgba(33,62,83,0.7) inset;
+    -moz-box-shadow: 0px 0px 15px rgba(33,62,83,0.7) inset;
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7) inset;
+  }
+
+  .targetStatus {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #cecdcb;
+    width: 47%;
+    height: 252px;
+    border-radius: 5px;
+    color: purple;
+    border-right: 1px solid #5d5a5a;
+    border-bottom: 1px solid #5d5a5a;
+    border-left: 1px solid #444343;
+    border-top: 1px solid #444343;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7) inset;
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7) inset;
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7) inset;
+  }
+
+  .bucket {
+    background: #2C2C2C;
+    height: 30px;
+    border-radius: 10px;
+    width: 80px;
+    border-right: 1px solid #736f6f;
+    border-bottom: 1px solid #736f6f;
+    border-left: 1px solid #383737;
+    border-top: 1px solid #383737;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7) inset;
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7) inset;
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7) inset;
+  }
+
+  .cssPair {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .tutorialArea {
+    display: flex;
+    width: 97.4%;
+    background: #cecdcb;
+    border-radius: 5px;
+    border-right: 1px solid #5d5a5a;
+    border-bottom: 1px solid #5d5a5a;
+    border-left: 1px solid #444343;
+    border-top: 1px solid #444343;
+    box-shadow: 0px 0px 15px rgba(33,62,83,0.7) inset;
+    -moz-box-shadow: 0px 0px 15px rgba(33,62,83,0.7) inset;
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7) inset;
+    align-self: center;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px 10px;
+    font-size: 12px;
+
+  }
+
+  .tutorialArea p {
+    width: 35%;
+  }
+
+  .tutorialArea ul {
+    display: flex;
+    flex-direction: row;
+    width: 65%;
+    margin-top: 0;
+  }
+
+  li {
+    margin: 20px;
+  }
+
+  .instructions {
+    display: none;
+  }
+
+  .mobileError {
+    display: none;
+  }
+
+  .hideMed {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+
+  h1 {
+    margin: 0px;
+  }
+
+  .playArea {
+    flex-direction: row;
+    width: 98%;
+  }
+
+  .buttonsAndInstructions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24%;
+  }
+
+  .buttonHolder {
+    flex-direction: column;
+    width: 97%;
+    height: 252px;
+    margin-bottom: 3px;
+    margin-top: 15px
+  }
+
+  .tutorialArea {
+    flex-direction: column;
+    height: 254px;
+    margin-left: 25px;
+    margin-top: 34px;
+  }
+
+  .tutorialArea p {
+    width: 100%;
+  }
+
+  .tutorialArea ul {
+    flex-direction: column;
+    width: 100%;
+    padding-left: 7px;
+  }
+
+  li {
+    margin: 0px;
+  }
+}
