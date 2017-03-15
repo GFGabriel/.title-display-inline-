@@ -7,7 +7,7 @@ cssBlocks: 1,
 cssSelectors: ["p"],
 cssPairs: [1],
 buttonsNeeded: ["strongOpen", "strongClose", "color", "purple"],
-classesNeeded: ["boldText", "purpleText"],
+classesNeeded: ["strongText", "purpleText"],
 },
 {
 name: "Level 12",

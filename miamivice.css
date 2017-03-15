@@ -86,10 +86,10 @@ body {
 
 /*game variables*/
 .purpleText {
-  color: purple;
+  color: rebeccaPurple;
 }
 
-.boldText {
+.strongText {
   font-weight: bold;
 }
 
@@ -254,7 +254,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: purple;
   }
 
   .tutorialArea {
