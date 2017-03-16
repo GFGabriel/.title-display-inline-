@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 	var currentClasses = $('#currentStatus')[0].classList
-	var level = 0
+	var level = 6
 	var pairNum = 0
 	var username
 
@@ -50,35 +50,67 @@ $( document ).ready(function() {
 				text: "Ok, I got it!",
 				click: function() {
 					$( this ).dialog( "close" );
-					$("#nameRequest").dialog({
-						width: 565,
-						dialogClass: "no-close",
-						autoOpen: true,
-						modal: true,
-						show: {
-							effect: "bounce",
-							duration: 1000
-						},
-						hide: {
-							effect: "clip",
-							duration: 50
-						},
-						buttons: [
-							{
-								text: "Let's get started!",
-								click: function() {
-									username = $('#username').val()
-									if (username.length < 2) {
-										username = "The Enigma"
-									}
-									$('#showUsername').text(username);
-									$( this ).dialog( "close" );
-									scoreTimer(60, score)
+					username = localStorage.getItem('name')
+					console.log(username)
+					if (username == null) {
+						$("#nameRequest").dialog({
+							width: 565,
+							dialogClass: "no-close",
+							autoOpen: true,
+							modal: true,
+							show: {
+								effect: "bounce",
+								duration: 1000
+							},
+							hide: {
+								effect: "clip",
+								duration: 50
+							},
+							buttons: [
+								{
+									text: "Let's get started!",
+									click: function() {
+										username = $('#username').val()
+										if (username.length < 2) {
+											username = "The Enigma"
+										}
+										localStorage.setItem('name', username)
+										$('#showUsername').text(username);
+										$( this ).dialog( "close" );
+										scoreTimer(60, score)
 
+									}
 								}
-							}
-						]
-					})
+							]
+						})
+					} else {
+						welcomePlayerBack(username)
+						$("#welcomeBack").dialog({
+							width: 565,
+							dialogClass: "no-close",
+							autoOpen: true,
+							modal: true,
+							show: {
+								effect: "bounce",
+								duration: 1000
+							},
+							hide: {
+								effect: "clip",
+								duration: 50
+							},
+							buttons: [
+								{
+									text: "Let's get started!",
+									click: function() {
+										$('#showUsername').text(username);
+										$( this ).dialog( "close" );
+										scoreTimer(60, score)
+
+									}
+								}
+							]
+						})
+					}
 				}
 			}
 		]
@@ -119,6 +151,7 @@ $( document ).ready(function() {
 });
 
 var genericText = "<section> This is some text.</section>"
+var genericTextLast = "<section> This is some text.</section>"
 var prependBucket = "<div class=\"bucket htmlBucket\" data-tag=\"opening\"></div>"
 var appendBucket = "<div class=\"bucket htmlBucket\" data-tag=\"closing\"></div>"
 var score = 0
@@ -138,6 +171,11 @@ function initLevel (level, score) {
 	makeButtonBoxDroppable()
 	updateScore (score)
 	pairNum = 0;
+}
+
+function welcomePlayerBack(name) {
+	var welcomeBackMessage = "<p>Hey " + name + ", welcome back! In your absence, you were missed. Now that you are back everything is alright.</p>"
+	$(welcomeBackMessage).appendTo('#welcomeBack')
 }
 
 function makeDraggable() {
@@ -247,9 +285,15 @@ function clearLevel() {
 }
 
 function createHTMLBox(x, y) {
+	var n = x - 1
+	console.log(y)
 	for (var i = 0; i < x; i++) {
-		$(genericText).appendTo('.htmlCodeBox')
-		$(".htmlCodeBox section").addClass("textLine" + i)
+		if (i == n) {
+			$(genericTextLast).addClass("textLine" + i).appendTo('.htmlCodeBox')
+		} else {
+			$(genericText).addClass("textLine" + i).appendTo('.htmlCodeBox')
+		}
+		// $(".htmlCodeBox section").addClass("textLine" + i)
 		createHTMLBuckets(y[i], i)
 	}
 
@@ -301,20 +345,20 @@ function createCSSPairs(x) {
 
 function createCurrentStatus(x) {
 	for (var i = 0; i < x; i++) {
-		$(genericText).appendTo('#currentStatus')
+		$(genericText).addClass("textLine" + i).appendTo('#currentStatus')
 	}
 }
 
 function createTargetStatus(x, y) {
 	for (var i = 0; i < x; i++) {
-		$(genericText).appendTo('#targetStatus')
+		$(genericText).addClass("cssTextLine" + i).appendTo('#targetStatus')
+		addTargetClasses(y[i], i)
 	}
-	addTargetClasses(y)
 }
 
-function addTargetClasses(x) {
+function addTargetClasses(x, y) {
 	for (var i = 0; i < x.length; i++) {
-		$("#targetStatus").addClass(x[i])
+		$(".cssTextLine" + y).addClass(x[i])
 	}
 }
 
@@ -390,6 +434,7 @@ function gameOver() {
 		width: 755,
 		dialogClass: "no-close",
 		autoOpen: false,
+		modal: true,
 		show: {
 			effect: "bounce",
 			duration: 1000
@@ -408,7 +453,7 @@ function gameOver() {
 			{
 				text: "Restart?",
 				click: function() {
-					location.reload(true);
+					location.reload(false);
 				}
 			}
 		]

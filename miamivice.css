@@ -189,6 +189,7 @@ body {
 
   #htmlTags {
     margin: 15px;
+    min-height: 40px;
   }
 
   .button {
@@ -241,6 +242,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
   }
 
   .cssCodeBox {
@@ -307,6 +309,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
   }
 
   #targetStatus {
@@ -320,6 +323,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
   }
 
   .tutorialArea {
