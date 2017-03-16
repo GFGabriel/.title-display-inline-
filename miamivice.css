@@ -52,7 +52,19 @@ body {
 }
 
 #congrats {
-  color: #4e2799;
+  display: none;
+}
+
+#tutorial {
+  display:none;
+}
+
+#nameRequest {
+  display: none;
+}
+
+#gameOver {
+  display: none;
 }
 
 .htmlCodeBox section {
@@ -69,6 +81,7 @@ body {
     font-weight: normal;
     font-family: "Pacifico", cursive;
     font-size: 60px;
+    text-align: center;
 }
 
 /*congrats window*/
@@ -79,9 +92,29 @@ body {
   font-family: "Righteous", san-serif;
 }
 
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+
+/*congrats window buttons*/
+.ui-dialog .ui-dialog-buttonpane {
+  background: #85E0FF;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+  background: #5939d8;
+  color: yellow;
+  font-family: "Righteous", san-serif;
+}
+
+.ui-widget-content {
+  border-top: 1px solid #5939d8;
+}
+
 /*congrats window border*/
 .ui-widget.ui-widget-content {
-  border: 5px solid #FF66FF
+  border: 5px solid #FF66FF;
+  background: #85E0FF;
 }
 
 /*game variables*/
@@ -93,6 +126,15 @@ body {
   font-weight: bold;
 }
 
+.emText {
+  font-style: italic;
+}
+
+.aText {
+  color: blue;
+  text-decoration: underline;
+}
+
 @media only screen and (min-width: 768px) {
 
   body {
@@ -100,6 +142,25 @@ body {
     width: auto;
   }
 
+  .leaderboard {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #85E0FF;
+    width: 33%;
+    color: yellow;
+    font-family: "Pacifico", cursive;
+    border-radius: 7px;
+    margin-bottom: 5px;
+    font-size: 30px;
+    padding-left: 15px;
+  }
+
+  .leaderboard p {
+    color: #85E0FF;
+    font-family: "Righteous", san-serif;
+    margin: 3px;
+    font-size: 18px;
+  }
   .playArea {
     display: flex;
     flex-direction: column;
@@ -107,7 +168,7 @@ body {
     border: 7px solid yellow;
     background: #FF66FF;
     align-self: center;
-    border-radius: 3px;
+    border-radius: 7px;
   }
 
   .gameInterface {
@@ -123,6 +184,11 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    border: 5px solid yellow;
+  }
+
+  #htmlTags {
+    margin: 15px;
   }
 
   .button {
@@ -267,14 +333,53 @@ body {
   .hideMed {
     display: none;
   }
+
+  .ui-dialog .ui-dialog-buttonpane button {
+    background: #4e2799;
+    color: yellow;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
   html {
     background: #4e2799;
   }
+
+  .topBar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .usernameBox {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nameAndScore{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 15px;
+  }
+
+  .nameAndScore span {
+    color: yellow;
+    font-family: "Pacifico", cursive;
+    font-size: 40px;
+  }
+
+  #scoreBox {
+    color: yellow;
+    font-family: "Pacifico", cursive;
+    font-size: 40px;
+  }
+
   .titleBox {
     height: 156px;
+    width: 33%;
+    justify-content: center;
   }
 
   .playArea {

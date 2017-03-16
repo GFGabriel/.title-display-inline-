@@ -9,12 +9,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <div id="congrats" title="Congratulations">
-      Good Job! You completed the first level!
+    <div id="tutorial" title="Welcome!">
+      Hello! Welcome to my game .title {display:inline} The purpose of this game is get the .currentStatus window (on the bottom left) to match the .targetStatus window (on the bottom right). To do this you will drag the buttons on the left into the buckets on the right. You can see your changes in real-time and adjust your buttons accordingly. We will start off with only HTML but soon we will introduce CSS styling elements as well. Good luck and have fun!
     </div>
-    <div class="titleBox">
-      <h1 class="title">.title</h1><!--
-      --><h1 class="subtitle">{display:inline}</h1>
+    <div id="nameRequest" title="New User?">
+      Please enter your desired username.
+      <form class="userName" action="index.html" method="post">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" value="">
+      </form>
+    </div>
+    <div class="topBar">
+      <div class="usernameBox">
+        <div class="nameAndScore">
+          <span id="showUsername"></span>
+          <span id="countdown"></span>
+        </div>
+        <span id="scoreBox"></span>
+        <span id="showUsername"></span>
+        <span id="countdown"></span>
+      </div>
+      <div class="titleBox">
+        <h1 class="title">.title</h1><!--
+        --><h1 class="subtitle">{display:inline}</h1>
+      </div>
+      <div class="leaderboard">
+        Leaderboard
+      </div>
     </div>
     <div class="mobileError">Sorry! .title {display: inline} is not available for mobile. The UI is simply too complex. Please return on a tablet or desktop/laptop.
     </div>
@@ -29,10 +50,6 @@
         </aside>
         <div class="buttonHolder">
           <div id="htmlTags">
-            <div class="html drag button" data-tag="opening" data-type="strong">&lt;strong&gt;</div>
-            <div class="html drag button" data-tag="closing" data-type="strong">&lt;/strong&gt;</div>
-            <div class="css drag button" data-tag="keyword" data-type="purple">color:</div>
-            <div class="css drag button" data-tag="value" data-type="purple">purple</div>
           </div>
         </div>
         <div class="medInstructions hideLarge"> DRAG TO BOXES BELOW
@@ -76,9 +93,16 @@
         </div>
       </div>
     </div>
+    <div id="congrats" title="Congratulations">
+      Good Job! You completed the level!
+    </div>
+    <div id="gameOver" title="Game over dude!">
+      You put up a valiant effort! Try again and go for the high score!
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="levels.js"></script>
+    <script type="text/javascript" src="buttons.js"></script>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
