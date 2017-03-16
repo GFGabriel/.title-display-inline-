@@ -54,6 +54,33 @@ var buttons = [
     classes: ["css", "drag", "button"],
     tag: "value",
     type: "purple",
-  }
-
+  },
+  {
+    name: "background",
+    innerText: "background:",
+    classes: ["css", "drag", "button"],
+    tag: "keyword",
+    type: "yellow",
+  },
+  {
+    name: "yellow",
+    innerText: "yellow",
+    classes: ["css", "drag", "button"],
+    tag: "value",
+    type: "yellow",
+  },
+  {
+    name: "font",
+    innerText: "font-family:",
+    classes: ["css", "drag", "button"],
+    tag: "keyword",
+    type: "font",
+  },
+  {
+    name: "pacifico",
+    innerText: "\"Pacifico\"",
+    classes: ["css", "drag", "button"],
+    tag: "value",
+    type: "font",
+  },
 ]

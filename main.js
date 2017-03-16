@@ -28,7 +28,7 @@ $( document ).ready(function() {
 						 gameOver();
 				 }
 		 }
-		 console.log(seconds);
+		//  console.log(seconds);
 		 tick();
 	}
 
@@ -108,10 +108,43 @@ $( document ).ready(function() {
 					click: function() {
 						score += 100
 						level += 1
+						console.log(level)
+						if (level == 6) {
+							$("#secondTutorial").dialog({
+								width: 565,
+								dialogClass: "no-close",
+								autoOpen: true,
+								modal: true,
+								show: {
+									effect: "bounce",
+									duration: 1000
+								},
+								hide: {
+									effect: "clip",
+									duration: 50
+								},
+								buttons: [
+									{
+										text: "Ok, I got it!",
+										click: function() {
+											console.log(level)
+											initLevel(level, score)
+											console.log(level)
+											$(this).dialog( "close" )
+											scoreTimer(60, score)
+										}
+									}
+								]
+							})
+						} else {
+							initLevel(level, score)
+							$(this).dialog( "close" )
+							scoreTimer(60, score)
+						}
 						// console.log(level);
-						initLevel(level, score)
-						$(this).dialog( "close" )
-						scoreTimer(60, score)
+						// initLevel(level, score)
+						// $(this).dialog( "close" )
+						// scoreTimer(60, score)
 					}
 				}
 			]
@@ -126,6 +159,7 @@ var score = 0
 
 function initLevel (level, score) {
 	console.log(score);
+	console.log(level)
 	clearLevel()
 	createHTMLBox(levels[level].textLines, levels[level].htmlBuckets)
 	createCSSBox(levels[level].cssBlocks, levels[level].cssSelectors, levels[level].cssPairs)
@@ -241,9 +275,9 @@ function clearLevel() {
 	$('.htmlCodeBox').empty()
 	$('.cssCodeBox').empty()
 	$('#currentStatus').empty()
-	$('#currentStatus')[0].classList = ""
+	$('#currentStatus')[0].classList = "status"
 	$('#targetStatus').empty()
-	$('#targetStatus')[0].classList = ""
+	$('#targetStatus')[0].classList = "status"
 }
 
 function createHTMLBox(x, y) {
@@ -278,25 +312,34 @@ function createCSSBox(x, y, z) {
 	// console.log(y)
 	// console.log(z)
 	for (var i = 0; i < x; i++) {
-		var openingBraces = "<p>" + y[i] + " {</p>"
-		$(openingBraces).appendTo('.cssCodeBox')
-		// console.log(z[i])
 		var num = z[i]
-		// console.log(num)
-		createCSSPairs(num)
-		var closingBraces = "<p>}</p>"
-		$(closingBraces).appendTo('.cssCodeBox')
+		var thePairs = createCSSPairs(num)
+
+		var cssGrouping = "<div class=\"cssGroup\"><p>" + y[i] + " {</p>" + thePairs + "<p>}</p></div>"
+		$(cssGrouping).appendTo('.cssCodeBox')
+
+
+		// var openingBraces = "<div class=\"cssGroup\"><p>" + y[i] + " {</p>"
+		// $(openingBraces).appendTo('.cssCodeBox')
+		// // console.log(z[i])
+		// var num = z[i]
+		// // console.log(num)
+		// createCSSPairs(num)
+		// var closingBraces = "<p>}</p></div>"
+		// $(closingBraces).appendTo('.cssCodeBox')
 	}
 }
 
 function createCSSPairs(x) {
+	var newPair = ""
 	var n = pairNum
 	// console.log(n)
 	for (var i = n; i < x + n; i++) {
 		var cssPair = "<div class=\"cssPair\"><div class=\"bucket cssBucket\" data-tag=\"keyword\" data-pair=" + i + "></div><!-- --><div class=\"bucket cssBucket\" data-tag=\"value\" data-pair=" + i + "></div></div>"
-		$(cssPair).appendTo('.cssCodeBox')
+		newPair += cssPair
 		pairNum = i + 1
 	}
+	return newPair
 }
 
 function createCurrentStatus(x) {
@@ -446,3 +489,17 @@ function gameOver() {
 // 	};
 //
 // dragula([document.getElementById(htmlTags), document.getElementsByClassName(htmlBucket)]);
+//
+// function drawCoin() {
+// 	var interval = 2000
+// 	function draw () {
+// 		coin drawing
+// 		if (interval > 300) {
+// 			interval -= 10
+// 			setTimeout(draw, interval)
+// 		}
+// 	}
+// 	draw()
+// }
+//
+// drawCoin()

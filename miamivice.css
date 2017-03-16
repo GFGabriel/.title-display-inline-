@@ -67,10 +67,24 @@ body {
   display: none;
 }
 
+#secondTutorial {
+  display: none;
+}
+
 .htmlCodeBox section {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.status {
+  background: #fff;
+  font-family: 'Oswald', sans-serif;
+}
+
+.cssCodeBox p {
+  margin: 0;
+  padding: 0;
 }
 
 /*congrats window header*/
@@ -118,10 +132,6 @@ body {
 }
 
 /*game variables*/
-.purpleText {
-  color: rebeccaPurple;
-}
-
 .strongText {
   font-weight: bold;
 }
@@ -133,6 +143,18 @@ body {
 .aText {
   color: blue;
   text-decoration: underline;
+}
+
+.purpleText {
+  color: rebeccaPurple;
+}
+
+.yellowText {
+  background: yellow;
+}
+
+.fontText {
+  font-family: "Pacifico", cursive;
 }
 
 @media only screen and (min-width: 768px) {
@@ -195,9 +217,9 @@ body {
     background: #85E0FF;
     border: 4px solid #4e2799;
     border-radius: 7px;
-    height: 28px;
+    height: 20px;
     font-family: "Righteous", san-serif;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
   }
 
@@ -264,7 +286,7 @@ body {
     border: 4px solid #85E0FF;
     width: 65px;
     margin: 10px;
-    height: 36px;
+    height: 28px;
     border-radius: 7px;
   }
 
@@ -297,26 +319,26 @@ body {
   }
 
   #currentStatus {
-    background-color: #fff;
+    /*background-color: #fff;*/
     border: 6px solid #4e2799;
     width: 47%;
     border-radius: 7px;
     height: 300px;
     font-size: 18px;
-    font-family: 'Oswald', sans-serif;
+    /*font-family: 'Oswald', sans-serif;*/
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   #targetStatus {
-    background-color: #fff;
+    /*background-color: #fff;*/
     border: 6px solid #4e2799;
     width: 47%;
     border-radius: 7px;
     height: 300px;
     font-size: 18px;
-    font-family: 'Oswald', sans-serif;
+    /*font-family: 'Oswald', sans-serif;*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -338,6 +360,15 @@ body {
     background: #4e2799;
     color: yellow;
   }
+
+  .yellowText {
+    background: yellow;
+  }
+
+  .fontText {
+    font-family: "Pacifico", cursive;
+  }
+
 }
 
 @media only screen and (min-width: 1024px) {
@@ -408,7 +439,7 @@ body {
   }
 
   .button {
-    font-size: 20px;
+    font-size: 14px;
   }
 
   .largeLabel {
@@ -434,12 +465,12 @@ body {
 
   .cssCodeBox {
     height: 282px;
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .bucket {
     width: 100px;
-    height: 36px;
+    height: 28px;
   }
 
   .largeStatusLabel {
@@ -471,4 +502,13 @@ body {
   .hideLarge {
     display: none;
   }
+
+  .yellowText {
+    background: yellow;
+  }
+
+  .fontText {
+    font-family: "Pacifico", cursive;
+  }
+
 }
