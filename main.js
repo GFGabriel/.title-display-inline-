@@ -50,35 +50,67 @@ $( document ).ready(function() {
 				text: "Ok, I got it!",
 				click: function() {
 					$( this ).dialog( "close" );
-					$("#nameRequest").dialog({
-						width: 565,
-						dialogClass: "no-close",
-						autoOpen: true,
-						modal: true,
-						show: {
-							effect: "bounce",
-							duration: 1000
-						},
-						hide: {
-							effect: "clip",
-							duration: 50
-						},
-						buttons: [
-							{
-								text: "Let's get started!",
-								click: function() {
-									username = $('#username').val()
-									if (username.length < 2) {
-										username = "The Enigma"
-									}
-									$('#showUsername').text(username);
-									$( this ).dialog( "close" );
-									scoreTimer(60, score)
+					username = localStorage.getItem('name')
+					console.log(username)
+					if (username == null) {
+						$("#nameRequest").dialog({
+							width: 565,
+							dialogClass: "no-close",
+							autoOpen: true,
+							modal: true,
+							show: {
+								effect: "bounce",
+								duration: 1000
+							},
+							hide: {
+								effect: "clip",
+								duration: 50
+							},
+							buttons: [
+								{
+									text: "Let's get started!",
+									click: function() {
+										username = $('#username').val()
+										if (username.length < 2) {
+											username = "The Enigma"
+										}
+										localStorage.setItem('name', username)
+										$('#showUsername').text(username);
+										$( this ).dialog( "close" );
+										scoreTimer(60, score)
 
+									}
 								}
-							}
-						]
-					})
+							]
+						})
+					} else {
+						welcomePlayerBack(username)
+						$("#welcomeBack").dialog({
+							width: 765,
+							dialogClass: "no-close",
+							autoOpen: true,
+							modal: true,
+							show: {
+								effect: "bounce",
+								duration: 1000
+							},
+							hide: {
+								effect: "clip",
+								duration: 50
+							},
+							buttons: [
+								{
+									text: "Let's get started!",
+									click: function() {
+										$('#showUsername').text(username);
+										$( this ).dialog( "close" );
+										scoreTimer(60, score)
+
+									}
+								}
+							]
+						})
+					}
 				}
 			}
 		]
@@ -101,6 +133,7 @@ $( document ).ready(function() {
 					text: "End Game?",
 					click: function() {
         		$( this ).dialog( "close" );
+						// $.post("https://galvanize-leader-board.herokuapp.com/api/v1/leader-board", { game_name: "titleDisplay", player_name: username, score: parseInt(score)})
       		}
 				},
 				{
@@ -136,7 +169,32 @@ $( document ).ready(function() {
 									}
 								]
 							})
-						} else {
+						} else if (level == 16) {
+								$("#demoOver").dialog({
+									width: 965,
+									dialogClass: "no-close",
+									autoOpen: true,
+									modal: true,
+									show: {
+										effect: "bounce",
+										duration: 1000
+									},
+									hide: {
+										effect: "clip",
+										duration: 50
+									},
+									buttons: [
+										{
+											text: "Awesome!",
+											click: function() {
+													// $.post("https://galvanize-leader-board.herokuapp.com/api/v1/leader-board", { game_name: "titleDisplay", player_name: username, score: parseInt(score)})
+													location.reload(true);
+												$(this).dialog( "close" )
+											}
+										}
+									]
+								})
+							} else {
 							initLevel(level, score)
 							$(this).dialog( "close" )
 							scoreTimer(60, score)
@@ -395,7 +453,7 @@ function checkHTMLMatch() {
 }
 
 function getLeaderboard() {
-	$.get("https://galvanize-leader-board.herokuapp.com/api/v1/leader-board/Space").then (function(data) {
+	$.get("https://galvanize-leader-board.herokuapp.com/api/v1/leader-board/titleDisplay").then (function(data) {
 		// console.log(data)
 		var leaderboard = "<p>" + data[0].player_name + ": " + data[0].score + "</p> <p>" + data[1].player_name + ": " + data[1].score + "</p> <p>" + data[2].player_name + ": " + data[2].score + "</p>"
 		$(leaderboard).appendTo(".leaderboard")
@@ -446,12 +504,14 @@ function gameOver() {
 				text: "End Game?",
 				click: function() {
 					$( this ).dialog( "close" );
+					// $.post("https://galvanize-leader-board.herokuapp.com/api/v1/leader-board", { game_name: "titleDisplay", player_name: username, score: parseInt(score)})
 				}
 			},
 			{
 				text: "Restart?",
 				click: function() {
 					location.reload(true);
+					// $.post("https://galvanize-leader-board.herokuapp.com/api/v1/leader-board", { game_name: "titleDisplay", player_name: username, score: parseInt(score)})
 				}
 			}
 		]
@@ -459,47 +519,7 @@ function gameOver() {
 	$( "#gameOver" ).dialog( "open" )
 }
 
-
-//
-// var firstBucketClassList =
-// tags = {
-// 		'<a>' : { src: tagA, html: '<a href="index.html" target="_blank">' },
-// 		'</a>' : { src: tagAClose, html: '</a>' },
-// 		'<br/>' : { src: tagBr, html: '<br/>' },
-// 		'<em>' : { src: tagEm, html: '<em>' },
-// 		'</em>' : { src: tagEmClose, html: '</em>' },
-// 		'<h1>' : { src: tagH1, html: '<h1>' },
-// 		'</h1>' : { src: tagH1Close, html: '</h1>' },
-// 		'<h2>' : { src: tagH2, html: '<h2>' },
-// 		'</h2>' : { src: tagH2Close, html: '</h2>' },
-// 		'<hr/>' : { src: tagHr, html: '<hr/>' },
-// 		'<img/>' : { src: tagImg, html: '<img src="'+tagImgSrc.src+'" />' },
-// 		'<li>' : { src: tagLi, html: '<li>' },
-// 		'</li>' : { src: tagLiClose, html: '</li>' },
-// 		'<ol>' : { src: tagOl, html: '<ol>' },
-// 		'</ol>' : { src: tagOlClose, html: '</ol>' },
-// 		'<p>' : { src: tagP, html: '<p>' },
-// 		'</p>' : { src: tagPClose, html: '</p>' },
-// 		'<strong>' : { src: tagStrong, html: '<strong>' },
-// 		'</strong>' : { src: tagStrongClose, html: '</strong>' },
-// 		'<ul>' : { src: tagUl, html: '<ul>' },
-// 		'</ul>' : { src: tagUlClose, html: '</ul>' },
-//     //will use ajax call on Senate.gov API to get the below. This is just a placeholder
-// 		'text' : { src: tagText, html: 'Random Senators Name' },
-// 	};
-//
-// dragula([document.getElementById(htmlTags), document.getElementsByClassName(htmlBucket)]);
-//
-// function drawCoin() {
-// 	var interval = 2000
-// 	function draw () {
-// 		coin drawing
-// 		if (interval > 300) {
-// 			interval -= 10
-// 			setTimeout(draw, interval)
-// 		}
-// 	}
-// 	draw()
-// }
-//
-// drawCoin()
+function welcomePlayerBack(name) {
+	var welcomeBackMessage = "<p>Hey " + name + ", welcome back! In your absence, you were missed. Now that you are back everything is alright.</p>"
+	$(welcomeBackMessage).appendTo('#welcomeBack')
+}

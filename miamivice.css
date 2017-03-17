@@ -71,6 +71,10 @@ body {
   display: none;
 }
 
+#demoOver {
+  display: none;
+}
+
 .htmlCodeBox section {
   display: flex;
   flex-direction: row;
@@ -80,6 +84,8 @@ body {
 .status {
   background: #fff;
   font-family: 'Oswald', sans-serif;
+  justify-content: center;
+  font-size: 24px;
 }
 
 .cssCodeBox p {
@@ -157,18 +163,64 @@ body {
   font-family: "Pacifico", cursive;
 }
 
+.alignText {
+  justify-content: flex-start;
+}
+
+.sizeText {
+  font-size: 70px;
+}
+
+.imageText {
+  background-image: url("tlc.jpg");
+  background-position: 40% 28%;
+  background-size: 100%;
+}
+
 @media only screen and (min-width: 768px) {
 
   body {
     height: auto;
     width: auto;
   }
+  .topBar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .usernameBox {
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nameAndScore{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 15px;
+  }
+
+  .nameAndScore span {
+    color: yellow;
+    font-family: "Pacifico", cursive;
+    font-size: 40px;
+  }
+
+  #scoreBox {
+    color: yellow;
+    font-family: "Pacifico", cursive;
+    font-size: 40px;
+    margin-left: 20px;
+  }
 
   .leaderboard {
     display: flex;
     flex-direction: column;
     border: 5px solid #85E0FF;
-    width: 33%;
+    width: 28%;
     color: yellow;
     font-family: "Pacifico", cursive;
     border-radius: 7px;
@@ -211,6 +263,9 @@ body {
 
   #htmlTags {
     margin: 15px;
+    min-height: 20px;
+    display: flex;
+    flex-direction: row;
   }
 
   .button {
@@ -324,11 +379,11 @@ body {
     width: 47%;
     border-radius: 7px;
     height: 300px;
-    font-size: 18px;
+    /*font-size: 18px;*/
     /*font-family: 'Oswald', sans-serif;*/
     display: flex;
     align-items: center;
-    justify-content: center;
+    /*justify-content: center;*/
   }
 
   #targetStatus {
@@ -337,11 +392,11 @@ body {
     width: 47%;
     border-radius: 7px;
     height: 300px;
-    font-size: 18px;
+    /*font-size: 18px;*/
     /*font-family: 'Oswald', sans-serif;*/
     display: flex;
     align-items: center;
-    justify-content: center;
+    /*justify-content: center;*/
   }
 
   .tutorialArea {
@@ -367,6 +422,14 @@ body {
 
   .fontText {
     font-family: "Pacifico", cursive;
+  }
+
+  .alignText {
+    justify-content: flex-start;
+  }
+
+  .sizeText {
+    font-size: 70px;
   }
 
 }
@@ -489,14 +552,17 @@ body {
     margin-right: 12px;
   }
 
+  #htmlTags {
+    min-height: 100px;
+    flex-direction: column;
+  }
+
   #currentStatus {
     height: 270px;
-    font-size: 24px;
   }
 
   #targetStatus {
     height: 270px;
-    font-size: 24px;
   }
 
   .hideLarge {
@@ -509,6 +575,14 @@ body {
 
   .fontText {
     font-family: "Pacifico", cursive;
+  }
+
+  .alignText {
+    justify-content: flex-start;
+  }
+
+  .sizeText {
+    font-size: 70px;
   }
 
 }

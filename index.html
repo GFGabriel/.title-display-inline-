@@ -22,9 +22,11 @@
         <input type="text" name="username" id="username" value="">
       </form>
     </div>
+    <div id="welcomeBack" title="Welcome Back!">
+    </div>
     <div class="topBar">
       <div class="usernameBox">
-        <div class="nameAndScore">
+        <div class="nameAndScore hideMobile">
           <span id="showUsername"></span>
           <span id="countdown"></span>
         </div>
@@ -36,7 +38,7 @@
         <h1 class="title">.title</h1><!--
         --><h1 class="subtitle">{display:inline}</h1>
       </div>
-      <div class="leaderboard">
+      <div class="leaderboard hideMobile">
         Leaderboard
       </div>
     </div>
@@ -99,8 +101,11 @@
     <div id="congrats" title="Congratulations">
       Good Job! You completed the level!
     </div>
-    <div id="gameOver" title="Game over dude!">
+    <div id="gameOver" title="Game Over Dude!">
       You put up a valiant effort! Try again and go for the high score!
+    </div>
+    <div id="demoOver" title="Thanks For Playing">
+      You have completed the demo! Keep an eye out for the full release coming in the future. Thanks so much for playing!
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
