@@ -133,7 +133,17 @@ $( document ).ready(function() {
 					text: "End Game?",
 					click: function() {
         		$( this ).dialog( "close" );
-						// $.post("https://galvanize-leader-board.herokuapp.com/api/v1/leader-board", { game_name: "titleDisplay", player_name: username, score: parseInt(score)})
+						var leaderboardUpdate = {
+							game_name: "titleDisplay",
+							player_name: username,
+							score: Number(score)
+						}
+						console.log(leaderboardUpdate)
+						$.post("https://galvanize-leader-board.herokuapp.com/api/v1/leader-board", leaderboardUpdate).then(function (result) {
+							console.log(result);
+						}).catch(function(error) {
+							console.log(error);
+						})
       		}
 				},
 				{
@@ -504,7 +514,17 @@ function gameOver() {
 				text: "End Game?",
 				click: function() {
 					$( this ).dialog( "close" );
-					// $.post("https://galvanize-leader-board.herokuapp.com/api/v1/leader-board", { game_name: "titleDisplay", player_name: username, score: parseInt(score)})
+					var leaderboardUpdate = {
+						game_name: "titleDisplay",
+						player_name: username,
+						score: Number(score)
+					}
+					console.log(leaderboardUpdate)
+					$.post("https://galvanize-leader-board.herokuapp.com/api/v1/leader-board", leaderboardUpdate).then(function (result) {
+						console.log(result);
+					}).catch(function(error) {
+						console.log(error);
+					})
 				}
 			},
 			{
